@@ -1,0 +1,83 @@
+" Vunble configuration
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'mileszs/ack.vim'
+
+filetype plugin indent on
+
+" Airline
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline_theme='solarized'
+
+" GitGutter
+let g:gitgutter_realtime = 1
+
+" NERDTree
+let NERDTreeQuitOnOpen=1
+
+" Theme
+let g:solarized_termcolors=16
+set t_Co=256
+colorscheme solarized
+set background=dark
+highlight SignColumn ctermbg=8
+autocmd ColorScheme * highlight clear SignColumn
+
+" Syntax
+syntax enable
+
+" Line number
+set number
+
+" Display tabs and eol
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,trail:·
+
+" Tabulation
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Whitespace hightlight
+autocmd BufWritePre *.py,*.java,*.rb,*.coffee,*.rake,*.js :%s/\s\+$//e
+set fileformat=unix
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+" Hotkeys
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Map Alt+Space to Esc for quick Insert mode quits
+:imap <A-space> <Esc>
+
+"disabling these keys should help me stop reaching for those keys
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" insert newline w/o Insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" Settings
+set nocompatible
+set cursorline
+set wildmenu

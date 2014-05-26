@@ -1,0 +1,16 @@
+[user]
+	name = dannytranlx
+	email = danny@dannytran.ca
+[alias]
+	co = checkout
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[help]
+	autocorrect = 1
+[push]
+	default = simple
+[core]
+	editor = vim
