@@ -13,6 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
@@ -60,8 +61,8 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Map Alt+Space to Esc for quick Insert mode quits
-:imap <A-space> <Esc>
+" Map jk  to Esc for quick Insert mode quits
+:imap jk <Esc>
 
 "disabling these keys should help me stop reaching for those keys
 inoremap  <Up>     <NOP>
