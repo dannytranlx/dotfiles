@@ -12,3 +12,5 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export PATH="$PATH:$HOME/../../Applications/play-1.2.7" # Add Play
