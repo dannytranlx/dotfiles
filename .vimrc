@@ -17,11 +17,29 @@ Plugin 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
+" Map Leader key to ","
+let mapleader = ","
+
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme='solarized'
+
+" Tabs/Buffer
+" Open new empty buffer
+nmap <leader>T :enew<cr>
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+" Close the current buffer and move to previous
+nmap <leader>bx :bp <BAR> bd #<CR>
+" Show all buffers
+nmap <leader>bl :ls<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 1
@@ -44,7 +62,7 @@ syntax enable
 set number
 
 " Display tabs and eol
-nmap <leader>l :set list!<CR>
+nmap <leader>lc :set list!<CR>
 set listchars=tab:▸\ ,trail:·
 
 " Tabulation
