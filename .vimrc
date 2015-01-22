@@ -14,6 +14,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'mephux/vim-jsfmt'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/syntastic'
 
 filetype plugin indent on
 
@@ -55,19 +61,27 @@ set background=dark
 highlight SignColumn ctermbg=8
 autocmd ColorScheme * highlight clear SignColumn
 
+" jsfmt
+let g:js_fmt_autosave = 1
+let g:js_fmt_fail_silently = 0
+let g:js_fmt_command = "jsfmt"
+
 " Syntax
 syntax enable
+let g:syntastic_check_on_open=1
 
 " Line number
 set number
 
 " Display tabs and eol
+"
 nmap <leader>lc :set list!<CR>
 set listchars=tab:▸\ ,trail:·
 
 " Tabulation
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Whitespace hightlight
@@ -81,6 +95,9 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " Map jk  to Esc for quick Insert mode quits
 :imap jk <Esc>
+
+" Map hotkey for delimitMate
+:imap <C-c> <CR><Esc>0
 
 "disabling these keys should help me stop reaching for those keys
 inoremap  <Up>     <NOP>
