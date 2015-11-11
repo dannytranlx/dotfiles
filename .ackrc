@@ -1,0 +1,13 @@
+--ignore-dir=node_modules
+--ignore-dir=bower_components
+--ignore-dir=dist
+--ignore-dir=coverage
+
+--color
+--nocss
+--smart-case
+
+--type-add=css=scss
+--type-add=css=less
+--type-set=json=.json
+--type-set=mustache=.mustache,.mu,.handlebars,.hbs,.hbars
