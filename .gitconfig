@@ -1,6 +1,6 @@
 [user]
 	name = dannytranlx
-	email = danny@dannytran.ca
+	email = danny@smooch.io
 [alias]
 	co = checkout
 [color]
@@ -15,5 +15,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	autocrlf = input
 [pull]
 	rebase = true

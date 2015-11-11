@@ -20,6 +20,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
+Plugin 'groenewege/vim-less'
 
 filetype plugin indent on
 
@@ -62,7 +63,7 @@ highlight SignColumn ctermbg=8
 autocmd ColorScheme * highlight clear SignColumn
 
 " jsfmt
-let g:js_fmt_autosave = 1
+let g:js_fmt_autosave = 0
 let g:js_fmt_fail_silently = 0
 let g:js_fmt_command = "jsfmt"
 
