@@ -21,6 +21,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'groenewege/vim-less'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
 
 filetype plugin indent on
 
@@ -53,6 +55,8 @@ let g:gitgutter_realtime = 1
 
 " NERDTree
 let NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize = 40
+map <C-k>b :NERDTreeToggle<CR>
 
 " Theme
 let g:solarized_termcolors=16
@@ -66,6 +70,12 @@ autocmd ColorScheme * highlight clear SignColumn
 let g:js_fmt_autosave = 0
 let g:js_fmt_fail_silently = 0
 let g:js_fmt_command = "jsfmt"
+
+" ycm
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+set omnifunc=syntaxcomplete#Complete
 
 " Syntax
 syntax enable
