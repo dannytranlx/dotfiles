@@ -106,6 +106,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_dont_split = 'NERD'
 
 " Map jk  to Esc for quick Insert mode quits
 :imap jk <Esc>
