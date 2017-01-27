@@ -6,10 +6,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'edkolev/tmuxline.vim'
@@ -84,7 +84,7 @@ let g:js_fmt_fail_silently = 0
 let g:js_fmt_command = "jsfmt"
 
 " esformatter
-let g:esformatter_autosave = 1
+let g:esformatter_autosave = 0
 
 " ycm
 let g:ycm_add_preview_to_completeopt=0
@@ -96,7 +96,7 @@ set omnifunc=syntaxcomplete#Complete
 syntax enable
 let g:syntastic_check_on_open=1
 let g:jsx_ext_required = 0
-let g:syntastic_javascript_eslint_exec = '/Users/danny/.nvm/versions/node/v4.2.2/bin/eslint'
+let g:syntastic_javascript_eslint_exec = '/Users/danny/.nvm/versions/node/v6.2.0/bin/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Line number
@@ -125,7 +125,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_dont_split = 'NERD'
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 0
 
 " Buffergator
 let g:buffergator_viewport_split_policy = 'B'
@@ -143,16 +143,6 @@ nmap <leader>bq :bp <BAR> bd #<cr>
 
 " Map hotkey for delimitMate
 :imap <C-c> <CR><Esc>0
-
-"disabling these keys should help me stop reaching for those keys
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
 
 " When pushing j/k on a line that is wrapped, it navigates to the same line,
 " " just to the expected location rather than to the next line
@@ -174,3 +164,4 @@ set hlsearch
 set hidden
 set guifont=Source\ Code\ Pro\ Light:h14
 set guioptions-=L
+set guioptions+=c
