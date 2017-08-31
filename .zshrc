@@ -35,3 +35,5 @@ source $(brew --prefix nvm)/nvm.sh
 alias fuck='eval $(thefuck $(fc -ln 0 | tail -n 1)); fc -R'
 alias vim='/usr/local/Cellar/vim/7.4.903/bin/vim'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="/usr/local/bin:$PATH"

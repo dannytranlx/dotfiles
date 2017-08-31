@@ -1,0 +1,30 @@
+# ~/.tmuxinator/smooch.yml
+
+name: smooch ♥
+root: ~/workspace/smooch
+
+windows:
+  - server:
+      layout: main-horizontal
+      panes:
+        - vim +q
+        - npm run dev
+        - npm run webpack
+        - ngrok:
+            - cd ~/Downloads
+            - ./ngrok http -subdomain=dtrn 8091
+        - rabbitmq:
+            - cd ~/workspace/smooch-rabbitmq-docker
+            - docker-compose up
+  - widget:
+      root: ~/workspace/smooch-js
+      layout: main-horizontal
+      panes:
+        -
+        - npm run dev
+        - npm run webpack
+
+  - mongo:
+      - mongo
+      - use agent-console-dev
+

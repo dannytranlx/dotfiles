@@ -156,12 +156,19 @@ nmap <CR> o<Esc>
 " clear hightlight
 nnoremap <CR> :noh<CR><CR>
 
+" hard mode lul
+noremap h <NOP>
+noremap j <NOP>
+noremap k <NOP>
+noremap l <NOP>
+
 " Settings
 set nocompatible
 set cursorline
 set wildmenu
 set hlsearch
 set hidden
+set splitright
 set guifont=Source\ Code\ Pro\ Light:h14
 set guioptions-=L
 set guioptions+=c
