@@ -14,7 +14,7 @@
 [push]
     default = simple
 [core]
-    editor = /usr/local/Cellar/vim/7.4.903/bin/vim
+    editor = /usr/local/bin/nvim
     excludesfile = ~/.gitignore
     autocrlf = input
 [pull]

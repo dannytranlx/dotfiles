@@ -1,6 +1,6 @@
 # ~/.tmuxinator/smooch.yml
 
-name: smooch ♥
+name: smooch
 root: ~/workspace/smooch
 
 windows:
@@ -24,7 +24,6 @@ windows:
         - npm run dev
         - npm run webpack
 
-  - mongo:
-      - mongo
-      - use agent-console-dev
+  - vim:
+      - vim .
 

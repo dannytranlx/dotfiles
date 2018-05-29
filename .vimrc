@@ -157,10 +157,10 @@ nmap <CR> o<Esc>
 nnoremap <CR> :noh<CR><CR>
 
 " hard mode lul
-noremap h <NOP>
-noremap j <NOP>
-noremap k <NOP>
-noremap l <NOP>
+" noremap h <NOP>
+" noremap j <NOP>
+" noremap k <NOP>
+" noremap l <NOP>
 
 " Settings
 set nocompatible
