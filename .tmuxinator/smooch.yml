@@ -12,7 +12,7 @@ windows:
         - npm run webpack
         - ngrok:
             - cd ~/Downloads
-            - ./ngrok http -subdomain=dtrn 8091
+            - ./ngrok start dtrn dnng
         - rabbitmq:
             - cd ~/workspace/smooch-rabbitmq-docker
             - docker-compose up
@@ -22,7 +22,6 @@ windows:
       panes:
         -
         - npm run dev
-        - npm run webpack
 
   - vim:
       - vim .

@@ -65,6 +65,7 @@ nmap <leader>bl :ls<CR>
 let g:gitgutter_realtime = 1
 
 " NERDTree
+let g:NERDTreeHijackNetrw = 1
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize = 40
 nmap ,n :NERDTreeFind<CR>

@@ -38,6 +38,7 @@ alias vim='/usr/local/bin/nvim'
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH="/usr/local/bin:$PATH"
+export PATH=/usr/local/Cellar/python/3.6.5:$PATH
 
 # mux
 source ~/.bin/tmuxinator.zsh
