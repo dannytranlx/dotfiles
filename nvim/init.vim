@@ -16,10 +16,10 @@
     Plug 'w0rp/ale'
     Plug 'geekjuice/vim-mocha'
     Plug 'millermedeiros/vim-esformatter'
-    Plug 'othree/yajs.vim'
     Plug 'prettier/vim-prettier', {
       \ 'do': 'npm install',
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+    Plug 'leafgarland/typescript-vim'
     call plug#end()
 " }}}
 
@@ -44,6 +44,7 @@
     set splitright
     set updatetime=100
     set wildmenu
+    set ignorecase
 
     " Map Leader key to ","
     let mapleader = ","
@@ -72,6 +73,9 @@
     " separator
     set fillchars+=vert:\ 
 " }}}
+
+" ack
+cnoreabbrev Ack Ack!
 
 " airline
 let g:airline_powerline_fonts=1

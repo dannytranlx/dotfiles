@@ -9,7 +9,8 @@ windows:
       panes:
         - vim +q
         - npm run dev
-        - npm run webpack
+        - build:
+            - npm run webpack
         - ngrok:
             - cd ~/Downloads
             - ./ngrok start dtrn dnng

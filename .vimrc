@@ -22,8 +22,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'groenewege/vim-less'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'marijnh/tern_for_vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'millermedeiros/vim-esformatter'
 Plugin 'maksimr/vim-jsbeautify'
@@ -85,7 +85,7 @@ let g:js_fmt_fail_silently = 0
 let g:js_fmt_command = "jsfmt"
 
 " esformatter
-let g:esformatter_autosave = 0
+let g:esformatter_autosave = 1
 
 " ycm
 let g:ycm_add_preview_to_completeopt=0
