@@ -25,7 +25,6 @@ Plugin 'groenewege/vim-less'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'marijnh/tern_for_vim'
 Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'millermedeiros/vim-esformatter'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'mxw/vim-jsx'
 
@@ -43,7 +42,7 @@ let mapleader = ","
 " Airline
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -75,6 +74,7 @@ nmap ,m :NERDTreeToggle<CR>
 let g:solarized_termcolors=16
 set t_Co=256
 colorscheme solarized
+"let g:solarized_termtrans = 1
 set background=dark
 highlight SignColumn ctermbg=8
 autocmd ColorScheme * highlight clear SignColumn

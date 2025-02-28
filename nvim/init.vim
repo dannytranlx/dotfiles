@@ -15,11 +15,14 @@
     " js
     Plug 'w0rp/ale'
     Plug 'geekjuice/vim-mocha'
-    Plug 'millermedeiros/vim-esformatter'
     Plug 'prettier/vim-prettier', {
       \ 'do': 'npm install',
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
     Plug 'leafgarland/typescript-vim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
+    " python
+    Plug 'psf/black'
     call plug#end()
 " }}}
 
@@ -31,6 +34,9 @@
 
     " clear hightlight
     nnoremap <CR> :noh<CR><CR>
+
+    " folding
+    nnoremap <space> za
 " }}}
 
 " nvim settings {{{
@@ -45,6 +51,8 @@
     set updatetime=100
     set wildmenu
     set ignorecase
+    set foldmethod=indent
+    set foldlevel=99
 
     " Map Leader key to ","
     let mapleader = ","
@@ -52,9 +60,9 @@
     " Tabulation
     set backspace=indent,eol,start
     set expandtab
-    set tabstop=4
-    set shiftwidth=4
-    set softtabstop=4
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
 
     " Display tabs and eol
     nmap <leader>lc :set list!<CR>
@@ -97,10 +105,11 @@ nmap <leader>bl :BuffergatorOpen<cr>
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 " ctrl p
-let g:ctrlp_custom_ignore='\v[\/](node_modules|target|dist|bower_components)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore='\v[\/](.git|node_modules|target|dist|bower_components|vendor)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_dont_split='NERD'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_show_hidden=1
+let g:ctrlp_max_files = 0
 
 " GitGutter
 let g:gitgutter_realtime=1
@@ -113,19 +122,20 @@ nmap ,m :NERDTreeToggle<CR>
 nmap <Leader>f <Plug>(Prettier)
 
 "colorscheme {{{
-    if (has("termguicolors"))
-        set termguicolors
-    endif
+    "if (has("termguicolors"))
+        "set termguicolors
+    "endif
 
     "colorscheme oceanic
-    let g:oceanic_next_terminal_bold=1
-    let g:oceanic_next_terminal_italic=1
+    "let g:oceanic_next_terminal_bold=1
+    "let g:oceanic_next_terminal_italic=1
 
     " colorscheme OceanicNext
     syntax on
     filetype plugin on
-    colorscheme OceanicNext
+    "colorscheme OceanicNext
+    colorscheme catppuccin-macchiato " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
     " airline
-    let g:airline_theme='oceanicnext'
+    let g:airline_theme='catppuccin'
 "}}}
