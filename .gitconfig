@@ -1,6 +1,7 @@
 [user]
     name = dannytranlx
-    email = danny@smooch.io
+    email = datran@zendesk.com
+    signingkey = D522AB6C83E3925D
 [alias]
     co = checkout
     amend = commit --amend --no-edit
@@ -14,8 +15,18 @@
 [push]
     default = simple
 [core]
-    editor = /usr/local/bin/nvim
+    editor = /opt/homebrew/bin/nvim
     excludesfile = ~/.gitignore
     autocrlf = input
 [pull]
     rebase = true
+[commit]
+    gpgsign = true
+[gpg]
+    program = /usr/local/MacGPG2/bin/gpg
+[credential]
+    helper = osxkeychain
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

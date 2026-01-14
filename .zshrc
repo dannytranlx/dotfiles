@@ -1,11 +1,12 @@
-export ZSH=$HOME/.oh-my-zsh
+# Zsh completions
+autoload -Uz compinit && compinit
+FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 
-ZSH_THEME="avit"
-alias tmux="TERM=screen-256color-bce tmux"
+# kubectl completions
+source <(kubectl completion zsh)
 
-plugins=(git macos brew node npm sudo tmux kubectl)
-
-source $ZSH/oh-my-zsh.sh
+# Initialize Starship prompt
+eval "$(starship init zsh)"
 
 # User configuration
 
@@ -15,9 +16,6 @@ export ANDROID_HOME=/usr/local/opt/android-sdk # Add Android SDK
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools" # Add Android
 export GRADLE_HOME=/usr/local/gradle-2.4
 export PATH=${PATH}:$GRADLE_HOME/bin
-
-# env vars
-source <(sed -E -n 's/[^#]+/export &/ p' ~/.env)
 
 # added by travis gem
 #[ -f /Users/dannyt/.travis/travis.sh ] && source /Users/dannyt/.travis/travis.sh
@@ -31,12 +29,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-alias fuck='eval $(thefuck $(fc -ln 0 | tail -n 1)); fc -R'
-# alias vim='/usr/local/Cellar/vim/7.4.903/bin/vim'
-alias vim='/opt/homebrew/bin/nvim'
-
-alias k='/usr/local/bin/kubectl'
-alias ketiwaweb="kubectl exec -it $(kubectl get pods -n whatsapp -l app=whatsapp-provisioning -l component=web --output=jsonpath='{range .items[0]}{.metadata.name}{end}')"
+# Aliases
+source ~/.aliases
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/Cellar/python@3.8/3.8.6_1/bin:$PATH
@@ -83,4 +77,32 @@ export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=$PATH:/Users/datran/bin
+
+# env vars
+source <(sed -E -n 's/[^#]+/export &/ p' ~/.env)
+
+
+[[ -s "/Users/datran/.gvm/scripts/gvm" ]] && source "/Users/datran/.gvm/scripts/gvm"
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+. "$HOME/.local/bin/env"
+
+# History search: type prefix, then up/down arrow to find matches
+# (placed at end to avoid being overridden)
+autoload -U up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search

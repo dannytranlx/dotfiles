@@ -1,0 +1,71 @@
+# Minimal Pure-like prompt with git and kubernetes
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$fill\
+$kubernetes\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[directory]
+style = "blue"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+style = "green"
+format = "[$branch]($style) "
+
+[git_status]
+format = '([$all_status](#939ab7) )([$ahead_behind](cyan) )'
+stashed = ""
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+conflicted = ""
+untracked = "*"
+modified = "*"
+staged = "*"
+renamed = ""
+deleted = ""
+typechanged = ""
+
+[kubernetes]
+disabled = false
+style = "cyan"
+format = "[$context]($style) "
+
+[cmd_duration]
+min_time = 2000
+style = "yellow"
+format = "[$duration]($style) "
+
+[character]
+success_symbol = "[❯](#f5bde6)"
+error_symbol = "[❯](#ed8796)"
+
+# Disable everything else for minimal prompt
+[aws]
+disabled = true
+[gcloud]
+disabled = true
+[nodejs]
+disabled = true
+[python]
+disabled = true
+[ruby]
+disabled = true
+[golang]
+disabled = true
+[rust]
+disabled = true
+[package]
+disabled = true
+[docker_context]
+disabled = true
