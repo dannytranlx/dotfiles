@@ -33,7 +33,7 @@ if [[ -n "$ASDF_DIR" && -d "$ASDF_DIR/completions" ]]; then
 fi
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -C
 
 # Initialize Starship prompt
 eval "$(starship init zsh)"
@@ -55,7 +55,13 @@ export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 
 # Shell integrations
-command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+_load_kubectl_completion() {
+  unfunction _load_kubectl_completion 2>/dev/null || true
+  command -v kubectl >/dev/null 2>&1 && source <(kubectl completion zsh)
+}
+if command -v kubectl >/dev/null 2>&1; then
+  compdef _load_kubectl_completion kubectl
+fi
 [[ -f "$HOME/workspace/kubectl_config/dotfiles/kubectl_stuff.bash" ]] && source "$HOME/workspace/kubectl_config/dotfiles/kubectl_stuff.bash"
 
 if [[ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]]; then
