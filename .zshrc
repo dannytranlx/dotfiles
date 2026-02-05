@@ -8,6 +8,9 @@ source <(kubectl completion zsh)
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 
+# Make Option+Backspace stop at path separators (/, ., ~, etc.)
+WORDCHARS='*?_[]$&;!#%^{}<>'
+
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
@@ -106,3 +109,6 @@ bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 bindkey '^[OA' up-line-or-beginning-search
 bindkey '^[OB' down-line-or-beginning-search
+
+# opencode
+export PATH=/Users/datran/.opencode/bin:$PATH
