@@ -1,0 +1,5 @@
+theme = catppuccin-macchiato
+background-opacity = 0.95
+background-blur-radius = 50
+font-feature = -liga -cast
+shell-integration = zsh

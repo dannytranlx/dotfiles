@@ -1,6 +1,7 @@
 # General
-alias fuck='eval $(thefuck $(fc -ln 0 | tail -n 1)); fc -R'
+eval $(thefuck --alias)
 alias vim='/opt/homebrew/bin/nvim'
+alias grep='grep --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
 alias lsa='ls -lah'
