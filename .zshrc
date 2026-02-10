@@ -98,11 +98,7 @@ export DOCKER_FOR_MAC_ENABLED=true
 [[ -f "$HOME/workspace/scooter/scripts/shell/scooter.sh" ]] && source "$HOME/workspace/scooter/scripts/shell/scooter.sh"
 
 eval "$(fzf --zsh)"
-if command -v zoxide >/dev/null 2>&1; then
-  eval "$(zoxide init zsh)"
-elif [[ -f "$(brew --prefix)/etc/profile.d/z.sh" ]]; then
-  . "$(brew --prefix)/etc/profile.d/z.sh"
-fi
+eval "$(zoxide init zsh)"
 
 export THEFUCK_REQUIRE_CONFIRMATION='false'
 
